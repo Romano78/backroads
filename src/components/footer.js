@@ -3,7 +3,6 @@ import styles from "../css/footer.module.css"
 import links from "../constants/links"
 import SocialLinks from "../constants/social-links"
 import { Link } from "gatsby"
-import { FaRProject } from "react-icons"
 
 const Footer = () => {
   return (
