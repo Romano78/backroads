@@ -19,7 +19,9 @@ const Navbar = () => {
       <nav className={styles.navbar}>
         <div className={styles.navCenter}>
           <div className={styles.navHeader}>
-            <img src={logo} alt="backroads logo " />
+            <Link to="/">
+              <img src={logo} alt="backroads logo " />
+            </Link>
             <button
               type="button"
               className={styles.logoBtn}
