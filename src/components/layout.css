@@ -80,6 +80,7 @@ a {
   max-height: 600px;
   box-shadow: var(--lightShadow);
 } */
+
 main {
   min-height: 100vh;
   display: flex;
