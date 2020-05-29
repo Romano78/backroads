@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import Tours from "../components/Tours/Tours"
 // import Button from "../exampleStyleComponent/Button"
 import StyledHero from "../components/StyledComponent/StyledHero"
 import { graphql } from "gatsby"
@@ -8,6 +9,7 @@ export default ({ data }) => {
     <Layout>
       <StyledHero img={data.defaultBcg.image.fluid}></StyledHero>
       <h1>Hello from Tour</h1>
+      <Tours></Tours>
     </Layout>
   )
 }
