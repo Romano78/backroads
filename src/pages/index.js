@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Banner from "../components/Banner"
 import About from "../components/Home/About"
 import Services from "../components/Home/Services"
@@ -15,9 +15,9 @@ export default ({ data }) => {
           title="continue exploring"
           info="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi, accusamus."
         >
-          <Link className="btn-white" to="/tour">
+          <AniLink className="btn-white" cover bg="#3fd0d4" to="/tour">
             Explore Tours
-          </Link>
+          </AniLink>
         </Banner>
       </StyledHero>
       <About />

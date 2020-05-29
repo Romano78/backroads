@@ -16,6 +16,12 @@ label {
   display: block;
   margin-bottom: 0.5rem;
 }
+input {
+  outline: none;
+}
+textarea {
+  outline: none;
+}
 .formControl,
 .submit {
   width: 100%;
@@ -29,12 +35,12 @@ label {
   background-color: var(--primaryColor);
   border-color: var(--primaryColor);
   text-transform: uppercase;
-  color: var(--mainBlack);
+  color: var(--mainWhite);
   transition: var(--mainTransition);
   cursor: pointer;
+  outline: none;
 }
 .submit:hover {
-  background: var(--darkGrey);
-  color: var(--mainWhite);
-  border-color: var(--darkGrey);
+  background: var(--mainWhite);
+  color: var(--primaryColor);
 }

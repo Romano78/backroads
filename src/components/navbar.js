@@ -4,7 +4,7 @@ import { FaAlignRight } from "react-icons/fa"
 import links from "../constants/links"
 import SocialLinks from "../constants/social-links"
 import logo from "../images/logo.svg"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const Navbar = () => {
   const [isOpen, setNav] = useState(false)
@@ -19,9 +19,9 @@ const Navbar = () => {
       <nav className={styles.navbar}>
         <div className={styles.navCenter}>
           <div className={styles.navHeader}>
-            <Link to="/">
+            <AniLink fade to="/">
               <img src={logo} alt="backroads logo " />
-            </Link>
+            </AniLink>
             <button
               type="button"
               className={styles.logoBtn}
@@ -40,7 +40,9 @@ const Navbar = () => {
             {links.map((item, index) => {
               return (
                 <li key={index}>
-                  <Link to={item.path}>{item.text}</Link>
+                  <AniLink fade to={item.path}>
+                    {item.text}
+                  </AniLink>
                 </li>
               )
             })}
