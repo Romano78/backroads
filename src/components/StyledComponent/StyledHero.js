@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { useStaticQuery, graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
 const StyledHero = ({ img, className, children, home }) => {
