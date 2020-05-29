@@ -1,15 +1,16 @@
 import React from "react"
 import Layout from "../components/layout"
-import SimpleHero from "../components/SimpleHero"
 import { Link } from "gatsby"
 import Banner from "../components/Banner"
 import About from "../components/Home/About"
 import Services from "../components/Home/Services"
+import StyledHero from "../components/StyledComponent/StyledHero"
+import { graphql } from "gatsby"
 
-export default function Home() {
+export default ({ data }) => {
   return (
     <Layout>
-      <SimpleHero>
+      <StyledHero home="true" img={data.defaultBcg.image.fluid}>
         <Banner
           title="continue exploring"
           info="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi, accusamus."
@@ -18,9 +19,21 @@ export default function Home() {
             Explore Tours
           </Link>
         </Banner>
-      </SimpleHero>
+      </StyledHero>
       <About />
       <Services />
     </Layout>
   )
 }
+
+export const query = graphql`
+  {
+    defaultBcg: file(relativePath: { eq: "defaultBcg.jpeg" }) {
+      image: childImageSharp {
+        fluid(quality: 90, maxWidth: 4160) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`
