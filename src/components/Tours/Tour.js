@@ -3,12 +3,13 @@ import styles from "../../css/tour.module.css"
 import Img from "gatsby-image"
 import { FaMap } from "react-icons/fa"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
+import PropTypes from "prop-types"
 
 const Tour = ({ tour }) => {
+  console.log(tour)
   const { images, price, name, country, slug, days } = tour
 
-  let mainImage = images[2].fluid
-
+  let mainImage = images[0].fluid
   return (
     <article className={styles.tour}>
       <div className={styles.imgContainer}>
@@ -19,11 +20,11 @@ const Tour = ({ tour }) => {
       </div>
 
       <div className={styles.footer}>
-        <h3>{name}</h3>
+        <h3>{name || "default name"}</h3>
         <div className={styles.info}>
           <h4 className={styles.country}>
             <FaMap className={styles.icon} />
-            {country}
+            {country || "default country"}
           </h4>
           <div className={styles.details}>
             <h6>{days} days</h6>
@@ -33,6 +34,16 @@ const Tour = ({ tour }) => {
       </div>
     </article>
   )
+}
+
+Tour.propTypes = {
+  tour: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    days: PropTypes.number.isRequired,
+    Images: PropTypes.array(PropTypes.object).isRequired,
+  }),
 }
 
 export default Tour

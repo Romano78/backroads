@@ -5,7 +5,6 @@ import { graphql } from "gatsby"
 import Contact from "../components/Contact/Contact"
 
 export default ({ data }) => {
-  console.log(data)
   return (
     <Layout>
       <StyledHero img={data.connectBcg.image.fluid}></StyledHero>

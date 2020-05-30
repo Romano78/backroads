@@ -7,7 +7,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const getTours = graphql`
   {
-    featuredTour: allContentfulTour {
+    featuredTour: allContentfulTour(filter: { featured: { eq: true } }) {
       nodes {
         name
         price
@@ -16,7 +16,7 @@ const getTours = graphql`
         days
         images {
           fluid {
-            ...GatsbyContentfulFluid_withWebp
+            ...GatsbyContentfulFluid
           }
         }
       }
@@ -26,13 +26,13 @@ const getTours = graphql`
 
 const FeaturedTours = () => {
   const data = useStaticQuery(getTours)
-  const tours = data.featuredTour.nodes
+  const featuredToursData = data.featuredTour.nodes
 
   return (
     <section className={styles.tours}>
       <Title title="featured" subtitle="tour"></Title>
       <div className={styles.center}>
-        {tours.map(tour => {
+        {featuredToursData.map(tour => {
           return <Tour key={tour.contentful_id} tour={tour}></Tour>
         })}
       </div>
