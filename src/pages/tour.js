@@ -8,7 +8,6 @@ export default ({ data }) => {
   return (
     <Layout>
       <StyledHero img={data.defaultBcg.image.fluid}></StyledHero>
-      <h1>Hello from Tour</h1>
       <Tours></Tours>
     </Layout>
   )

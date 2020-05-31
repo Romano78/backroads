@@ -3,18 +3,17 @@ import styles from "../../css/tour.module.css"
 import Img from "gatsby-image"
 import { FaMap } from "react-icons/fa"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 
 const Tour = ({ tour }) => {
-  console.log(tour)
   const { images, price, name, country, slug, days } = tour
 
-  let mainImage = images[0].fluid
+  let mainImage = images[1].fluid
   return (
     <article className={styles.tour}>
       <div className={styles.imgContainer}>
         <Img fluid={mainImage} alt="single tour" className={styles.img} />
-        <AniLink fade className={styles.link} to={`/tours/${slug}`}>
+        <AniLink fade className={styles.link} to={`/tour/${slug}`}>
           Details
         </AniLink>
       </div>
@@ -36,14 +35,14 @@ const Tour = ({ tour }) => {
   )
 }
 
-Tour.propTypes = {
-  tour: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    country: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    days: PropTypes.number.isRequired,
-    Images: PropTypes.array(PropTypes.object).isRequired,
-  }),
-}
+// Tour.propTypes = {
+//   tour: PropTypes.shape({
+//     name: PropTypes.string.isRequired,
+//     country: PropTypes.string.isRequired,
+//     price: PropTypes.number.isRequired,
+//     days: PropTypes.number.isRequired,
+//     Images: PropTypes.array(PropTypes.object).isRequired,
+//   }),
+// }
 
 export default Tour
